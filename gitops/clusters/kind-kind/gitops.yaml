@@ -1,0 +1,16 @@
+apiVersion: gitops.kluctl.io/v1beta1
+kind: KluctlDeployment
+metadata:
+  name: gitops
+  namespace: kluctl-system
+spec:
+  interval: 1m
+  timeout: 2m
+  source:
+    url: https://github.com/codablock/kluctl-sessions-rawkode.git
+    path: "gitops"
+  target: kind-kind
+  context: default
+
+  prune: true
+  delete: true
