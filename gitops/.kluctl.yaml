@@ -1,0 +1,5 @@
+
+targets:
+  - name: kind-kind
+
+discriminator: gitops-{{ target.name }}
