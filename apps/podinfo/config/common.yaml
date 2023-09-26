@@ -1,0 +1,6 @@
+
+podinfo:
+  color: {{ args.podinfo.color }}
+  replicas: {{ args.podinfo.replicas }}
+
+base_dns: localhost.tv

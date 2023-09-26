@@ -1,0 +1,15 @@
+kubeProxyReplacement: strict
+nodePort:
+  enabled: true
+
+operator:
+  image:
+    useDigest: false
+
+hubble:
+  tls:
+    auto:
+      method: cronJob
+
+k8sServiceHost: kind-control-plane
+k8sServicePort: 6443

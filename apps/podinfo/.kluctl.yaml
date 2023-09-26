@@ -1,0 +1,27 @@
+targets:
+  - name: test
+    args:
+      env_type: non-prod
+      env_name: test
+  - name: prod
+    args:
+      env_type: prod
+      env_name: prod
+  - name: preview
+    args:
+      env_type: non-prod
+      env_name: dummy
+
+args:
+  - name: image_name
+    default: ghcr.io/podtato-head/podtato-server
+  - name: image_version
+    default: "v0.3.1"
+  - name: podinfo
+    default:
+      color: blue
+      replicas: 1
+  - name: force_legs
+    default: false
+
+discriminator: "podtato-head-{{ target.name }}-{{ args.env_name }}"

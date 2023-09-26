@@ -1,0 +1,10 @@
+deployments:
+  - path: cilium
+  - barrier: true
+  - path: cilium-wait
+  - path: namespaces
+  - barrier: true
+  - path: cert-manager
+  - path: ingress-nginx
+  - barrier: true
+  - include: kluctl

@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ingress-cert
+  namespace: "{{ args.env_name }}-podinfo"
+spec:
+  dnsNames:
+    - {{ args.env_name }}-podinfo.{{ base_dns }}
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-issuer
+  secretName: ingress-cert
